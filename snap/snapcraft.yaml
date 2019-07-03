@@ -1,0 +1,49 @@
+name: devilutionX
+version: git
+summary: Diablo build for modern operating systems
+description: |
+  Diablo build for modern operating systems
+grade: stable
+confinement: strict
+
+apps:
+  devilutionX:
+    command:
+    desktop:
+    plugs:
+      - x11
+      - network
+      - unity7
+      - opengl
+      - pulseaudio
+      - wayland
+      - desktop
+      - desktop-legacy
+      - browser-support
+      - home
+    
+parts:
+  devilutionX:
+    source: https://github.com/kz6fittycent/devilutionX
+    source-type: git
+    
+    after:
+      - [desktop-qt5]
+    plugin:
+      - make
+      
+    build-packages:
+      - cmake 
+      - g++-multilib 
+      - libsdl2-mixer-dev:i386 
+      - libsdl2-ttf-dev:i386 
+      - libsodium-dev 
+      - libsodium-dev:i386
+    
+    stage-packages:
+      - cmake 
+      - g++-multilib 
+      - libsdl2-mixer-dev:i386 
+      - libsdl2-ttf-dev:i386 
+      - libsodium-dev 
+      - libsodium-dev:i386
