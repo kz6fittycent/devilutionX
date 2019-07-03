@@ -30,7 +30,7 @@ parts:
     after:
       - [desktop-qt5]
     plugin:
-      - make
+      - cmake
       
     build-packages:
       - cmake 
